@@ -12,7 +12,7 @@ int PB(char lista[29858][200], char palavra[200], int inicio, int fim, int* time
 			return centro + 1;
 		} else if(strcmp(palavra, lista[centro]) < 0) {
 			times++;
-			fim = centro - 1;
+			fim = centro;
 			return PB(lista, palavra, inicio, fim, times);
 		} else {
 			times++;
@@ -44,6 +44,7 @@ int main() {
 	while(fscanf(file, "%s", texto[i]) != EOF) {
 		i++;
 	}
+	fclose(file);
 
 	printf("Escreva uma palavra para ser encontrada no texto:\n> ");
 	scanf("%s", palavra);
